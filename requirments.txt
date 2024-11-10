@@ -1,0 +1,5 @@
+streamlit
+gtts
+mtranslate
+pandas
+base64
