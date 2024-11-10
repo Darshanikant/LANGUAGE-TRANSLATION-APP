@@ -1,4 +1,4 @@
-
+pip install mtranslate
 # import all the libraries for requirments
 import streamlit as st # for design frontend
 #Translating text between a wide range of languages.
