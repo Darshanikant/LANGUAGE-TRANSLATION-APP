@@ -1,13 +1,10 @@
 # Import necessary libraries
 import streamlit as st
-from googletrans import Translator  # Import Translator from googletrans
+from deep_translator import GoogleTranslator  # Use GoogleTranslator from deep-translator
 import pandas as pd
 from gtts import gTTS  # Google Text-to-Speech
 import base64
 import os
-
-# Initialize the Translator
-translator = Translator()
 
 # Load the language dataset
 data = pd.read_csv("language.csv")  # Make sure language.csv is in the same directory
@@ -111,9 +108,9 @@ if st.button("Convert"):
     # I/O operations
     if len(inputtext) > 0:
         try:
-            # Perform translation using googletrans
+            # Perform translation using deep-translator
             target_lang_code = lang_array[selected_option]
-            output = translator.translate(inputtext, dest=target_lang_code).text
+            output = GoogleTranslator(source='auto', target=target_lang_code).translate(inputtext)
 
             # Display translated text
             with c1:
